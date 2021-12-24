@@ -3,5 +3,5 @@ provider "oci" {
   user_ocid        = var.user_ocid
   fingerprint      = var.fingerprint
   region           = var.region
- private_key_path = pathexpand(var.private_key_path)
-}
+  config_file_profile = var.user_profile
+ }
