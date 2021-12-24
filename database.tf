@@ -6,7 +6,7 @@ resource oci_database_db_system "CreateDBSystem" {
   #backup_subnet_id = <<Optional value not found in discovery>>
   #cluster_name = <<Optional value not found in discovery>>
   compartment_id          = var.compartment_ocid
-  cpu_core_count          = "1"
+  cpu_core_count          = "2"
   data_storage_percentage = "80"
   data_storage_size_in_gb = "256"
   database_edition        = "ENTERPRISE_EDITION_HIGH_PERFORMANCE"
