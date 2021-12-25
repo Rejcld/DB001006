@@ -1,7 +1,7 @@
 pipeline {
   agent any
   stages {
-    stage('Tool Version Check') {
+    stage('Tool Check') {
       steps {
         sh '''git --version
 java -version
@@ -27,7 +27,7 @@ terraform version'''
       }
     }
 
-    stage('Complete') {
+    stage('Final') {
       steps {
         echo 'Completed'
       }
