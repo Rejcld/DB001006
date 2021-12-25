@@ -2,10 +2,21 @@ pipeline {
   agent any
   stages {
     stage('Tool Check') {
-      steps {
-        sh '''git --version
+      parallel {
+        stage('Tool Check') {
+          steps {
+            sh '''git --version
 java -version
 terraform version'''
+          }
+        }
+
+        stage('EmailBuild') {
+          steps {
+            emailext(subject: 'TF Build Starts', body: 'We are starting the TF Build', replyTo: 'rejcld@gmail.com', to: 'rejishs@gmail.com')
+          }
+        }
+
       }
     }
 
